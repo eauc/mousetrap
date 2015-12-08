@@ -930,10 +930,10 @@
      * @param {string=} action
      * @returns void
      */
-    Mousetrap.prototype.trigger = function(keys, action) {
+  Mousetrap.prototype.trigger = function(keys, action, event) {
         var self = this;
         if (self._directMap[keys + ':' + action]) {
-            self._directMap[keys + ':' + action]({}, keys);
+            self._directMap[keys + ':' + action](event || {}, keys);
         }
         return self;
     };
